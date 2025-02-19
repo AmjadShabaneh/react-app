@@ -10,14 +10,14 @@ const Cart = () => {
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem('cart')));
-  }, []);
+  },[cart]);
 
   useEffect(() => {
     const user = localStorage.getItem('user');
     if (!user) {
       nav('/login');
     }
-  }, []);
+  });
 
   const remove = (productId) => {
     const newCart = cart.filter((item) => item.id !== productId);
